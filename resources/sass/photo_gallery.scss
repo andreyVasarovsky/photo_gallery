@@ -1,0 +1,46 @@
+body{
+    .link-icon{
+        text-decoration: none;
+        font-size: 18px;
+        +.link-icon{
+            margin-left: 4px;
+        }
+    }
+    table{
+        &.close-borders{
+            border-right: solid 1px #dee2e6;
+            border-left: solid 1px #dee2e6;
+        }
+    }
+    .hover-table-actions{
+        tbody{
+            tr{
+                .actions{
+                    width: 120px;
+                    .action{
+                        display: none;
+                        margin: 0 4px;
+                        color: #757575;
+                        text-decoration: none;
+                    }
+                }
+            }
+            tr:hover{
+                .actions{
+                    .action{
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+    .bootstrap-select{
+        button{
+            background-color: #ffffff;
+            border: 1px solid #ced4da;
+        }
+    }
+    .content-wrapper{
+        overflow: scroll;
+    }
+}

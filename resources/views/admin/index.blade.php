@@ -21,7 +21,18 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-
+                        <div class="col-lg-3 col-6">
+                            <div class="small-box bg-secondary">
+                                <div class="inner">
+                                    <h3> {{ $clients->count() }} </h3>
+                                    <p>Клиенты</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ico fas fa-users"></i>
+                                </div>
+                                <a href="{{ route('admin.client.index') }}" class="small-box-footer">Смотреть <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
