@@ -16,5 +16,23 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
         Route::patch('/{user}', 'UpdateController')->name('admin.client.update');
         Route::delete('/{client}', 'DestroyController')->name('admin.client.destroy');
     });
+    Route::group(['namespace' => 'Photo', 'prefix' => 'photo'], function () {
+        Route::get('/', 'IndexController')->name('admin.photo.index');
+//        Route::get('/create', 'CreateController')->name('admin.client.create');
+//        Route::get('/{client}', 'ShowController')->name('admin.client.show');
+//        Route::get('/{client}/edit', 'EditController')->name('admin.client.edit');
+//        Route::post('/store', 'StoreController')->name('admin.client.store');
+//        Route::patch('/{user}', 'UpdateController')->name('admin.client.update');
+//        Route::delete('/{client}', 'DestroyController')->name('admin.client.destroy');
+    });
+    Route::group(['namespace' => 'Theme', 'prefix' => 'theme'], function () {
+        Route::get('/', 'IndexController')->name('admin.theme.index');
+//        Route::get('/create', 'CreateController')->name('admin.client.create');
+//        Route::get('/{client}', 'ShowController')->name('admin.client.show');
+//        Route::get('/{client}/edit', 'EditController')->name('admin.client.edit');
+//        Route::post('/store', 'StoreController')->name('admin.client.store');
+//        Route::patch('/{user}', 'UpdateController')->name('admin.client.update');
+//        Route::delete('/{client}', 'DestroyController')->name('admin.client.destroy');
+    });
 });
 

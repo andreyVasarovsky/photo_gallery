@@ -52,9 +52,21 @@
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-item">
-                        <a href="{{ route('admin.client.index') }}" class="nav-link">
+                        <a href="{{ route('admin.client.inсдыdex') }}" class="nav-link">
                             <i class="nav-icon fas fa-users"></i>
                             <p>Клиенты</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.photo.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-image"></i>
+                            <p>Фото</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.theme.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-list"></i>
+                            <p>Темы</p>
                         </a>
                     </li>
                 </ul>
