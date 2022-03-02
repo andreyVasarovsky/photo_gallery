@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ClientTheme extends Model
 {
     use HasFactory;
+    protected $table = 'client_themes';
+    protected $guarded = [];
 }
