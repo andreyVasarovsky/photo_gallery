@@ -31,6 +31,12 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
     });
     Route::group(['namespace' => 'Photo', 'prefix' => 'photo'], function () {
         Route::get('/', 'IndexController')->name('admin.photo.index');
+        Route::get('/create', 'CreateController')->name('admin.photo.create');
+        Route::get('/{photo}', 'ShowController')->name('admin.photo.show');
+        Route::get('/{photo}/edit', 'EditController')->name('admin.photo.edit');
+        Route::post('/store', 'StoreController')->name('admin.photo.store');
+        Route::patch('/{photo}', 'UpdateController')->name('admin.photo.update');
+        Route::delete('/{photo}', 'DestroyController')->name('admin.photo.destroy');
     });
     Route::group(['namespace' => 'Theme', 'prefix' => 'theme'], function () {
         Route::get('/', 'IndexController')->name('admin.theme.index');
