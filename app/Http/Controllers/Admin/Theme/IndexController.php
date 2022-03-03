@@ -4,14 +4,13 @@
 namespace App\Http\Controllers\Admin\Theme;
 
 use App\Http\Controllers\Controller;
-use App\Models\Client;
+use App\Models\Theme;
 
 class IndexController extends Controller
 {
     public function __invoke()
     {
-        dd('Theme');
-        $clients = Client::all();
-        return view('admin.client.index', compact('clients'));
+        $themes = Theme::all();
+        return view('admin.theme.index', compact('themes'));
     }
 }
