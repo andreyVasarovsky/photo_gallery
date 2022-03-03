@@ -22,11 +22,25 @@
                             <form action="{{ route('admin.client.update', $client->id) }}" method="POST">
                                 @method('PATCH')
                                 @csrf
+                                <div class="form-group d-none">
+                                    <input type="hidden" name="id" class="form-control" id="id" value="{{ $client->id }}">
+                                </div>
+
                                 <div class="form-group">
-                                    <label for="title">Название</label>
-                                    <input type="text" name="title" class="form-control" id="title"
-                                           placeholder="Название" value="{{ (empty(old('title'))) ? $client->title : old('title') }}">
-                                    @error('title')
+                                    <label for="title">ФИО</label>
+                                    <input type="text" name="full_name" class="form-control" id="full_name"
+                                           placeholder="ФИО" value="{{ (empty(old('full_name'))) ? $client->full_name : old('full_name') }}">
+                                    @error('full_name')
+                                    <div class="text-danger">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="title">Телефон</label>
+                                    <input type="text" name="phone" class="form-control" id="phone"
+                                           placeholder="Телефон" value="{{ (empty(old('phone'))) ? $client->phone : old('phone') }}">
+                                    @error('phone')
                                     <div class="text-danger">
                                         {{$message}}
                                     </div>
@@ -34,40 +48,24 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="region">Регион</label>
-                                    <input type="text" name="region" class="form-control" id="region"
-                                           placeholder="Регион" value="{{ (empty(old('region'))) ? $client->region : old('region') }}">
-                                    @error('region')
+                                    <input type="text" name="location" class="form-control" id="location"
+                                           placeholder="Регион" value="{{ (empty(old('location'))) ? $client->location : old('location') }}">
+                                    @error('location')
                                     <div class="text-danger">
                                         {{$message}}
                                     </div>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <label for="delivery_price">Стоимость поставки</label>
-                                            <input type="number" step="any" min="0" name="delivery_price" class="form-control"
-                                                   id="delivery_price" placeholder="Стоимость поставки"
-                                                   value="{{ (empty(old('delivery_price'))) ? $client->delivery_price : old('delivery_price') }}">
-                                            @error('delivery_price')
-                                            <div class="text-danger">
-                                                {{$message}}
-                                            </div>
-                                            @enderror
-                                        </div>
-                                        <div class="col-6">
-                                            <label for="agreement_date">Дата договора</label>
-                                            <input type="text" name="agreement_date" class="form-control" id="agreement_date"
-                                                   value="{{ (empty(old('agreement_date'))) ? $client->agreement_date : old('agreement_date') }}">
-                                            @error('agreement_date')
-                                            <div class="text-danger">
-                                                {{$message}}
-                                            </div>
-                                            @enderror
-                                        </div>
+                                    <label for="region">Email</label>
+                                    <input type="text" name="email" class="form-control" id="email"
+                                           placeholder="Email" value="{{ (empty(old('email'))) ? $client->email : old('email') }}">
+                                    @error('email')
+                                    <div class="text-danger">
+                                        {{$message}}
                                     </div>
+                                    @enderror
                                 </div>
-
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Обновить</button>
                                     <a href="{{ route('admin.client.index') }}" type="button" class="btn btn-danger">К списку</a>
