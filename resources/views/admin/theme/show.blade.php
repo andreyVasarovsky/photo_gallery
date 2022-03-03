@@ -37,6 +37,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Название</th>
                                     <th scope="col">Описание</th>
+                                    <th scope="col">Кол-во фото</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -44,6 +45,7 @@
                                     <th scope="row">{{ $theme->id }}</th>
                                     <td>{{ $theme->title }}</td>
                                     <td>{{ $theme->desc }}</td>
+                                    <td>{{ $theme->photos->count() }}</td>
                                 </tr>
                                 </tbody>
                             </table>
