@@ -7,12 +7,19 @@
                 <h1>Photo gallery!</h1>
             </div>
             @foreach($randomPhotos AS $photo)
-                <div class="col-12 col-md-4 col-ld-4 text-center">
-                    <img src="{{ $photo->url }}" class="img-fluid" alt="Image" style="height: 300px;">
-                    <p class="mb-0 mt-2">
-                        {{ $photo->desc }}
-                    </p>
-                </div>
+                <a href="{{ route('public.theme.show', $photo->theme->id) }}" class="col-12 col-md-6 text-center mt-2 text-decoration-none text-secondary">
+                    <div class="preview-card shadow-lg p-3 bg-white rounded">
+                        <img src="{{ $photo->url }}" class="img-fluid" alt="Image" style="height: 300px;">
+                        <h5 class="mb-2 mt-2">{{ $photo->theme->title }}</h5>
+                        <p class="mb-0 mt-2 text-decoration-none">
+                            @if($photo->desc)
+                                {{ $photo->desc }}
+                            @else
+                                &nbsp;
+                            @endif
+                        </p>
+                    </div>
+                </a>
             @endforeach
         </div>
     </div>
