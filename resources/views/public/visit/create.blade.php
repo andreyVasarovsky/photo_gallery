@@ -6,7 +6,7 @@
                 <h1>Оставить заявку</h1>
             </div>
             <div class="col-6">
-
+                Тут форма
             </div>
             <div class="col-6"></div>
         </div>
