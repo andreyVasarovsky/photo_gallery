@@ -22,6 +22,18 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-3 col-6">
+                            <div class="small-box bg-primary">
+                                <div class="inner">
+                                    <h3> {{ $visits->count() }} </h3>
+                                    <p>Заявки</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ico fas fa-address-card"></i>
+                                </div>
+                                <a href="{{ route('admin.visit.index') }}" class="small-box-footer">Смотреть <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
                             <div class="small-box bg-info">
                                 <div class="inner">
                                     <h3> {{ $clients->count() }} </h3>

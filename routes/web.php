@@ -32,6 +32,13 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
         Route::patch('/{theme}', 'UpdateController')->name('admin.theme.update');
         Route::delete('/{theme}', 'DestroyController')->name('admin.theme.destroy');
     });
+    Route::group(['namespace' => 'Visit', 'prefix' => 'visit'], function () {
+        Route::get('/', 'IndexController')->name('admin.visit.index');
+        Route::get('/{visit}', 'ShowController')->name('admin.visit.show');//ToDO!
+        Route::get('/{visit}/edit', 'EditController')->name('admin.visit.edit');//ToDO!
+        Route::patch('/{visit}', 'UpdateController')->name('admin.visit.update');//ToDO!
+        Route::delete('/{visit}', 'DestroyController')->name('admin.visit.destroy');//ToDO!
+    });
 });
 Auth::routes();
 Route::group(['namespace' => 'App\Http\Controllers'], function () {

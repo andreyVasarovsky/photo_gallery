@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Client;
 use App\Models\Photo;
 use App\Models\Theme;
+use App\Models\Visit;
 
 class IndexController extends Controller
 {
@@ -15,6 +16,7 @@ class IndexController extends Controller
         $clients = Client::all();
         $photos = Photo::all();
         $themes = Theme::all();
-        return view('admin.index', compact(['clients', 'photos', 'themes']));
+        $visits = Visit::all();
+        return view('admin.index', compact(['clients', 'photos', 'themes', 'visits']));
     }
 }
