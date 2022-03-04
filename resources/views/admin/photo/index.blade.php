@@ -23,7 +23,7 @@
                     <div class="row">
                         @if($photos->count() > 0)
                             @foreach($photos AS $photo)
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mt-2">
+                                <div class="col-12 col-sm-6 col-md-3 mt-4">
                                     <div href="{{ route('admin.photo.show', $photo->id) }}" class="photo-admin-card">
                                         <div class="img-wrapper">
                                             <img src="{{ $photo->url }}" alt="Картинка">

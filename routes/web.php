@@ -42,6 +42,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     });
     Route::group(['namespace' => 'Public\Visit', 'prefix' => 'visit'], function(){
         Route::get('/create', 'CreateController')->name('public.visit.create');
+        Route::post('/store', 'StoreController')->name('public.visit.store');
     });
 });
 

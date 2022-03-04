@@ -1,11 +1,9 @@
 <?php
 
-
-namespace App\Http\Controllers\Admin\Photo;
-
+namespace App\Http\Controllers\Public\Visit;
 
 use App\Http\Controllers\Controller;
-use App\Services\Admin\Photo\Service;
+use App\Services\Public\Visit\Service;
 
 class BaseController extends Controller
 {
@@ -15,5 +13,4 @@ class BaseController extends Controller
     {
         $this->service = $service;
     }
-
 }

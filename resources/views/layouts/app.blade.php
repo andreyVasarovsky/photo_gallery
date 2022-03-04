@@ -10,13 +10,19 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- DatePicker -->
+    <script type="text/javascript" src="{{ asset('https://cdn.jsdelivr.net/momentjs/latest/moment.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
+    <script src=" {{asset('plugins/daterangepicker/daterangepicker.js')}} "></script>
+    <script src="{{ asset('js/public/scripts.js') }}" defer></script>
 </head>
 <body>
 <div id="app">
