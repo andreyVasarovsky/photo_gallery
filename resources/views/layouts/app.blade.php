@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
+                Главная
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -35,7 +35,21 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav me-auto">
-
+                    @if($themes->count() > 0)
+                        <li class="nav-item dropdown" style="font-size: 16px;">
+                            <a id="theme" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Темы
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="theme">
+                                @foreach($themes AS $theme)
+                                    <a class="dropdown-item" href="{{ route('public.show.theme', $theme->id) }}">
+                                        {{ $theme->title }}
+                                    </a>
+                                @endforeach
+                            </div>
+                        </li>
+                    @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -44,13 +58,13 @@
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">Войти</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}">Регистрация</a>
                             </li>
                         @endif
                     @else
@@ -69,7 +83,7 @@
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    Выйти
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

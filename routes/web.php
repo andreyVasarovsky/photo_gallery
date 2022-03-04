@@ -1,23 +1,8 @@
 <?php
 
-use App\Models\Client;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-//$data = [
-//    "full_name" => "Andrej Vasarovskij1",
-//    "phone" => "+37128885023",
-//    "location" => "LV31",
-//    "email" => "andrej.vasarovskij@gmail.com",
-//];
-//$client = Client::find(1);
-////dd($client);
-//$client->update($data);
-//
-//dd('OK');
-
-Auth::routes();
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('/', 'IndexController')->name('admin.index');
     Route::group(['namespace' => 'Client', 'prefix' => 'clients'], function () {
@@ -48,4 +33,12 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
         Route::delete('/{theme}', 'DestroyController')->name('admin.theme.destroy');
     });
 });
+Auth::routes();
+Route::group(['namespace' => 'App\Http\Controllers'], function () {
+    Route::get('/', 'HomeController')->name('home');
+    Route::group(['namespace' => 'Public\Theme', 'prefix' => 'theme'], function(){
+        Route::get('/{theme}', 'ShowController')->name('public.show.theme');
+    });
+});
+
 
