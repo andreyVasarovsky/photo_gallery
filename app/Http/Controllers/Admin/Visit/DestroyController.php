@@ -4,13 +4,13 @@
 namespace App\Http\Controllers\Admin\Visit;
 
 use App\Http\Controllers\Controller;
-use App\Models\Client;
+use App\Models\Visit;
 
 class DestroyController extends Controller
 {
-    public function __invoke(Client $client)
+    public function __invoke(Visit $visit)
     {
-        $client->delete();
-        return redirect(route('admin.client.index'));
+        $visit->delete();
+        return redirect(route('admin.visit.index'));
     }
 }
