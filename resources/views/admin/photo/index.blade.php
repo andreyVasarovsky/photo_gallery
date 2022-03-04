@@ -21,54 +21,38 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-6">
-                            @if($photos->count() > 0)
-                                <table class="table table-hover hover-table-actions close-borders">
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Превью</th>
-                                        <th scope="col">Ссылка</th>
-                                        <th scope="col">Размер</th>
-                                        <th scope="col">Тема</th>
-                                        <th scope="col">Описание</th>
-                                        <th scope="col">&nbsp;</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($photos AS $photo)
-                                        <tr>
-                                            <th scope="row">{{ $photo->id }}</th>
-                                            <td><img src="{{ $photo->url }}" alt="Картинка" style="max-width: 100px;"></td>
-                                            <td><a href="{{ $photo->url }}" target="_blank">Открыть</a></td>
-                                            <td>{{ $photo->size }}</td>
-                                            <td>{{ $photo->theme->title }}</td>
-                                            <td>{{ $photo->desc }}</td>
-                                            <td class="actions" style="font-size: 14px;">
-                                                <a href="{{ route('admin.photo.show', $photo->id) }}" class="action">
-                                                    <i class="fas fa-eye"></i>
-                                                </a>
-                                                <a href="{{ route('admin.photo.edit', $photo->id) }}" class="action">
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
-                                                <form action="{{ route('admin.photo.destroy', $photo->id) }}" method="POST" class="action">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="border-0 bg-transparent p-0">
-                                                        <i class="fas fa-trash-alt text-danger" role="button"></i>
-                                                    </button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            @else
-                                <div class="alert alert-dark" role="alert">
-                                    Записей нет!
+                        @if($photos->count() > 0)
+                            @foreach($photos AS $photo)
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mt-2">
+                                    <div href="{{ route('admin.photo.show', $photo->id) }}" class="photo-admin-card">
+                                        <div class="img-wrapper">
+                                            <img src="{{ $photo->url }}" alt="Картинка">
+                                        </div>
+                                        <div class="theme">
+                                            {{ $photo->theme->title }}
+                                        </div>
+                                        <div class="action-list text-center mt-2">
+                                            <a href="{{ route('admin.photo.show', $photo->id) }}" class="action">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                            <a href="{{ route('admin.photo.edit', $photo->id) }}" class="action">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                        </div>
+                                        <div class="open">
+                                            <a href="{{ $photo->url }}" target="_blank">В новой вкладке</a>
+                                        </div>
+                                        <div class="size">
+                                            Размер: {{ $photo->size }}
+                                        </div>
+                                    </div>
                                 </div>
-                            @endif
-                        </div>
+                            @endforeach
+                        @else
+                            <div class="alert alert-dark" role="alert">
+                                Записей нет!
+                            </div>
+                        @endif
                     </div>
                 </div>
             </section>

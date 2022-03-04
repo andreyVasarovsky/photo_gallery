@@ -11316,3 +11316,52 @@ body .bootstrap-select button {
 body .content-wrapper {
   overflow: scroll;
 }
+body .photo-admin-card {
+  position: relative;
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.25), 0 0px 4px rgba(0, 0, 0, 0.22);
+  display: block;
+  height: 300px;
+  padding: 8px;
+  text-decoration: none;
+  color: #757575;
+}
+body .photo-admin-card .img-wrapper {
+  height: 200px;
+  width: 100%;
+  padding: 8px;
+  text-align: center;
+}
+body .photo-admin-card .img-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+}
+body .photo-admin-card .theme {
+  text-align: center;
+  font-size: 18px;
+}
+body .photo-admin-card .size, body .photo-admin-card .open {
+  position: absolute;
+  bottom: 0;
+  right: 8px;
+  font-size: 10px;
+}
+body .photo-admin-card .open {
+  left: 8px;
+  right: unset;
+}
+body .photo-admin-card a {
+  color: #757575;
+}
+body .photo-admin-card a.action {
+  text-decoration: none;
+}
+body .photo-admin-card .action-list {
+  font-size: 16px;
+  display: none;
+}
+body .photo-admin-card .action-list .action + .action {
+  margin-left: 8px;
+}
+body .photo-admin-card:hover .action-list {
+  display: block;
+}
