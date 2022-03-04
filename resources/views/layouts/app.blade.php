@@ -41,8 +41,11 @@
                                 Темы
                             </a>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="theme">
+                                <a class="dropdown-item" href="{{ route('public.theme.index') }}">
+                                    <strong>Посмотреть все</strong>
+                                </a>
                                 @foreach($themes AS $theme)
-                                    <a class="dropdown-item" href="{{ route('public.show.theme', $theme->id) }}">
+                                    <a class="dropdown-item" href="{{ route('public.theme.show', $theme->id) }}">
                                         {{ $theme->title }}
                                     </a>
                                 @endforeach

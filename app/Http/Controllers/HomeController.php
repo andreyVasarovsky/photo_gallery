@@ -10,7 +10,7 @@ class HomeController extends Controller
     public function __invoke()
     {
         $themes = Theme::all();
-        $randomPhotos = Photo::inRandomOrder()->limit(3)->get();
+        $randomPhotos = Photo::inRandomOrder()->limit(8)->get();
         return view('home', compact('themes', 'randomPhotos'));
     }
 }

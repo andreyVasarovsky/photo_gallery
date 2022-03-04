@@ -37,7 +37,8 @@ Auth::routes();
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/', 'HomeController')->name('home');
     Route::group(['namespace' => 'Public\Theme', 'prefix' => 'theme'], function(){
-        Route::get('/{theme}', 'ShowController')->name('public.show.theme');
+        Route::get('/', 'IndexController')->name('public.theme.index');
+        Route::get('/{theme}', 'ShowController')->name('public.theme.show');
     });
 });
 
