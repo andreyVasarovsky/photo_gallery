@@ -33,9 +33,12 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav me-auto">
+                <ul class="navbar-nav me-auto" style="font-size: 16px;">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('public.visit.create') }}">Оставить заявку</a>
+                    </li>
                     @if($themes->count() > 0)
-                        <li class="nav-item dropdown" style="font-size: 16px;">
+                        <li class="nav-item dropdown">
                             <a id="theme" class="nav-link dropdown-toggle" href="#" role="button"
                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Темы

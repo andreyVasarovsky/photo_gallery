@@ -40,6 +40,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         Route::get('/', 'IndexController')->name('public.theme.index');
         Route::get('/{theme}', 'ShowController')->name('public.theme.show');
     });
+    Route::group(['namespace' => 'Public\Visit', 'prefix' => 'visit'], function(){
+        Route::get('/create', 'CreateController')->name('public.visit.create');
+    });
 });
 
 
