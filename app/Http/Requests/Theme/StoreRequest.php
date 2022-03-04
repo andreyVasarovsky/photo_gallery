@@ -25,7 +25,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
-            'desc' => 'nullable|string',
+            'desc' => 'required|string',
         ];
     }
 }
