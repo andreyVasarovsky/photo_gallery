@@ -29,6 +29,7 @@ class UpdateRequest extends FormRequest
             'email' => 'required|email',
             'location' => 'required|string',
             'date' => 'required|date',
+            'status' => 'required'
         ];
     }
 }

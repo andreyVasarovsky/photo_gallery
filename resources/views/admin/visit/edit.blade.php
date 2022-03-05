@@ -66,6 +66,22 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
+                                    <label for="status">Статус</label>
+                                    <select name="status" class="form-control" id="status">
+                                        @foreach($visit->getStatuses() AS $statusId => $status)
+                                            <option {{ (old('status') == $statusId) ? ' selected' : ($statusId == $visit->status ? ' selected' : '') }}
+                                                    value="{{ $statusId }}">
+                                                {{ $status }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    @error('status')
+                                    <div class="text-danger">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
                                     <label for="date">Дата договора</label>
                                     <input type="text" name="date" class="form-control" id="visit_date"
                                            value="{{ (empty(old('date'))) ? $visit->date : old('date') }}">

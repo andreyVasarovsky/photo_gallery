@@ -30,7 +30,7 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12">
                             <table class="table close-borders">
                                 <thead>
                                 <tr>
@@ -39,6 +39,7 @@
                                     <th scope="col">Телефон</th>
                                     <th scope="col">Почта</th>
                                     <th scope="col">Локация</th>
+                                    <th scope="col">Статус</th>
                                     <th scope="col">Дата</th>
                                 </tr>
                                 </thead>
@@ -49,6 +50,7 @@
                                     <td>{{ $visit->phone }}</td>
                                     <td>{{ $visit->email }}</td>
                                     <td>{{ $visit->location }}</td>
+                                    <td class="{{ $visit->getStatusClass() }}">{{ $visit->getStatusTitle() }}</td>
                                     <td>{{ $visit->date }}</td>
                                 </tr>
                                 </tbody>

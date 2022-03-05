@@ -59,6 +59,22 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
+                                    <label for="status">Статус</label>
+                                    <select name="status" class="form-control" id="status">
+                                        @foreach($statuses AS $statusId => $status)
+                                            <option {{ (old('status') == $statusId) ? ' selected' : '' }}
+                                                    value="{{ $statusId }}">
+                                                {{ $status }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    @error('status')
+                                    <div class="text-danger">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
                                     <label for="date">Дата</label>
                                     <input type="text" name="date" class="form-control" id="visit_date"
                                            value="{{ (empty(old('date'))) ? '' : old('date') }}">

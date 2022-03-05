@@ -31,6 +31,7 @@
                                         <th scope="col">Телефон</th>
                                         <th scope="col">Почта</th>
                                         <th scope="col">Локация</th>
+                                        <th scope="col">Статус</th>
                                         <th scope="col">Дата</th>
                                         <th scope="col">&nbsp;</th>
                                     </tr>
@@ -43,6 +44,7 @@
                                             <td>{{ $visit->phone }}</td>
                                             <td>{{ $visit->email }}</td>
                                             <td>{{ $visit->location }}</td>
+                                            <td class="{{ $visit->getStatusClass() }}">{{ $visit->getStatusTitle() }}</td>
                                             <td>{{ $visit->date }}</td>
                                             <td class="actions" style="font-size: 14px;">
                                                 <a href="{{ route('admin.visit.show', $visit->id) }}" class="action">
