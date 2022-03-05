@@ -14,6 +14,7 @@ class Service
         Visit::firstOrCreate([
             'full_name' => $dataToStore['full_name'],
             'phone' => $dataToStore['phone'],
+            'status' => Visit::STATUS_IN_PROGRESS,
         ], $dataToStore);
     }
 }

@@ -20,6 +20,7 @@ return new class extends Migration
                 ->nullable()
                 ->after('location')
                 ->comment('1: In progress. 2: Completed');
+            $table->dropUnique('visits_phone_full_name_unique');
         });
     }
 
@@ -32,6 +33,7 @@ return new class extends Migration
     {
         Schema::table('visits', function (Blueprint $table) {
             $table->dropColumn('status');
+            $table->unique(['phone', 'full_name']);
         });
     }
 };

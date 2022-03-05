@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests\Visit;
 
+use App\Models\Visit;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateRequest extends FormRequest
 {
@@ -24,8 +26,8 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'full_name' => 'required|string|unique:visits,full_name,'.request()->get('id'),
-            'phone' => 'required|string|unique:visits,phone,'.request()->get('id'),
+            'full_name' => 'required|string',
+            'phone' => 'required|string',
             'email' => 'required|email',
             'location' => 'required|string',
             'date' => 'required|date',

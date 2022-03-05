@@ -11,6 +11,8 @@ class Visit extends Model
 
     protected $table = 'visits';
     protected $guarded = [];
+    const STATUS_IN_PROGRESS = 1;
+    const STATUS_COMPLETED = 2;
     const STATUSES = [
         1 => 'В процессе',
         2 => 'Завершено'

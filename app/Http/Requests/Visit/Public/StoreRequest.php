@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests\Visit\Public;
 
+use App\Models\Visit;
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreRequest extends FormRequest
@@ -24,12 +26,28 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'full_name' => 'required|string|unique:visits,full_name',
-            'phone' => 'required|string|unique:visits,phone',
+            'full_name' => [
+                'required',
+                'string',
+                Rule::unique('visits', 'full_name')->whereNot('status', Visit::STATUS_COMPLETED),
+            ],
+            'phone' => [
+                'required',
+                'string',
+                Rule::unique('visits', 'phone')->whereNot('status', Visit::STATUS_COMPLETED),
+            ],
             'email' => 'required|email',
             'location' => 'required|string',
             'date' => 'required|date',
             'g-recaptcha-response' => 'required|recaptcha',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'full_name.unique' => 'Request already exist or still in progress',
+            'phone.unique' => 'Request already exist or still in progress',
         ];
     }
 }
