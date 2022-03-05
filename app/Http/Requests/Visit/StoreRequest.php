@@ -29,6 +29,7 @@ class StoreRequest extends FormRequest
             'email' => 'required|email',
             'location' => 'required|string',
             'date' => 'required|date',
+            'g-recaptcha-response' => 'required|recaptcha',
         ];
     }
 }

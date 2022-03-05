@@ -7,9 +7,13 @@ use App\Models\Visit;
 class Service
 {
     public function store($data){
+        $dataToStore = $data;
+        if(isset($dataToStore))
+            unset($dataToStore['g-recaptcha-response']);
+
         Visit::firstOrCreate([
-            'full_name' => $data['full_name'],
-            'phone' => $data['phone'],
-        ], $data);
+            'full_name' => $dataToStore['full_name'],
+            'phone' => $dataToStore['phone'],
+        ], $dataToStore);
     }
 }

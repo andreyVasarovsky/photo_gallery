@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
     <script src=" {{asset('plugins/daterangepicker/daterangepicker.js')}} "></script>
     <script src="{{ asset('js/public/scripts.js') }}" defer></script>
+    <script src='{{ asset('https://www.google.com/recaptcha/api.js') }}'></script>
 </head>
 <body>
 <div id="app">

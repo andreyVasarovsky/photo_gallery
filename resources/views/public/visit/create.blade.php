@@ -58,6 +58,17 @@
                         </div>
                         @enderror
                     </div>
+                    <div class="form-group mt-3">
+                        <div class="g-recaptcha"
+                             data-sitekey="{{config('services.recaptcha.key')}}">
+                        </div>
+                        @error('g-recaptcha-response')
+                        <div class="text-danger">
+                            {{$message}}
+                        </div>
+                        @enderror
+                    </div>
+
                     <div class="form-group mt-2">
                         <button type="submit" class="btn btn-primary">Оставить заявку</button>
                     </div>
