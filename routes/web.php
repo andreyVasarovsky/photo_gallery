@@ -34,8 +34,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
     });
     Route::group(['namespace' => 'Visit', 'prefix' => 'visit'], function () {
         Route::get('/', 'IndexController')->name('admin.visit.index');
+        Route::get('/create', 'CreateController')->name('admin.visit.create');
         Route::get('/{visit}', 'ShowController')->name('admin.visit.show');
         Route::get('/{visit}/edit', 'EditController')->name('admin.visit.edit');
+        Route::post('/store', 'StoreController')->name('admin.visit.store');
         Route::patch('/{visit}', 'UpdateController')->name('admin.visit.update');
         Route::delete('/{visit}', 'DestroyController')->name('admin.visit.destroy');
     });

@@ -3,7 +3,7 @@
 
 namespace App\Http\Controllers\Public\Visit;
 
-use App\Http\Requests\Visit\StoreRequest;
+use App\Http\Requests\Visit\Public\StoreRequest;
 use App\Models\Theme;
 
 class StoreController extends BaseController

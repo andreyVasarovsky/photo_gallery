@@ -11,6 +11,10 @@
                         <div class="col-12 mb-2">
                             <h1 class="m-0 d-inline align-middle">Заявки</h1>
                         </div>
+                        <div class="col-12 mb-2">
+                            <a href="{{ route('admin.visit.create') }}" type="button"
+                               class="btn btn-sm btn-success d-inline">Добавить</a>
+                        </div>
                     </div>
                 </div>
             </div>
