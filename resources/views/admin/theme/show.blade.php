@@ -20,10 +20,12 @@
                                     <i class="fas fa-trash-alt link-icon text-danger" role="button"></i>
                                 </button>
                             </form>
+                            @if($errors->any())
+                                <div class="alert alert-danger mt-2" role="alert">
+                                    {{ $errors->first() }}
+                                </div>
+                            @endif
                         </div>
-                        @if(session('error'))
-                            <div class="col-12 alert alert-danger">{{ session('error') }}</div>
-                        @endif
                     </div>
                 </div>
             </div>

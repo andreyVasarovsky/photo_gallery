@@ -15,6 +15,13 @@
                             <a href="{{ route('admin.theme.create') }}" type="button"
                                class="btn btn-sm btn-success d-inline">Добавить</a>
                         </div>
+                        @if($errors->any())
+                            <div class="col-12">
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $errors->first() }}
+                                </div>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
