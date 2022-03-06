@@ -28,6 +28,8 @@ class StoreRequest extends FormRequest
             'phone' => 'required|string|unique:clients,phone',
             'location' => 'required|string',
             'email' => 'required|email',
+            'theme_ids' => 'nullable|array',
+            'theme_ids.*' => 'nullable|integer|exists:themes,id',
         ];
     }
 }

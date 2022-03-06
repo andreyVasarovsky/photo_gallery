@@ -21,7 +21,7 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12">
                             @if($clients->count() > 0)
                                 <table class="table table-hover hover-table-actions close-borders">
                                     <thead>
@@ -31,6 +31,7 @@
                                         <th scope="col">Телефон</th>
                                         <th scope="col">Почта</th>
                                         <th scope="col">Локация</th>
+                                        <th scope="col">Темы</th>
                                         <th scope="col">&nbsp;</th>
                                     </tr>
                                     </thead>
@@ -42,6 +43,15 @@
                                             <td>{{ $client->phone }}</td>
                                             <td>{{ $client->email }}</td>
                                             <td>{{ $client->location }}</td>
+                                            <td>
+                                                @if($client->themes->count() > 0)
+                                                    @foreach($client->themes AS $theme)
+                                                        <span class="badge badge-info">{{ $theme->title }}</span>
+                                                    @endforeach
+                                                @else
+                                                    Пусто
+                                                @endif
+                                            </td>
                                             <td class="actions" style="font-size: 14px;">
                                                 <a href="{{ route('admin.client.show', $client->id) }}" class="action">
                                                     <i class="fas fa-eye"></i>

@@ -60,6 +60,25 @@
                                     </div>
                                     @enderror
                                 </div>
+                                @if($themes->count() > 0)
+                                    <div class="form-group">
+                                        <label for="theme_ids">Темы</label>
+                                        <select multiple class="form-control" name="theme_ids[]" id="theme_ids">
+                                            @foreach($themes AS $theme)
+                                                <option
+                                                    {{ is_array(old('theme_ids')) && in_array($theme->id, old('theme_ids')) ? ' selected' : '' }}
+                                                    value="{{ $theme->id }}">
+                                                    {{ $theme->title }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        @error('theme_ids')
+                                        <div class="text-danger">
+                                            {{$message}}
+                                        </div>
+                                        @enderror
+                                    </div>
+                                @endif
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Сохранить</button>
                                     <a href="{{ route('admin.client.index') }}" type="button" class="btn btn-danger">Вернутся</a>

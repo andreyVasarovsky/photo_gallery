@@ -30,7 +30,7 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12">
                             <table class="table close-borders">
                                 <thead>
                                 <tr>
@@ -39,6 +39,7 @@
                                     <th scope="col">Телефон</th>
                                     <th scope="col">Почта</th>
                                     <th scope="col">Локация</th>
+                                    <th scope="col">Темы</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -48,6 +49,15 @@
                                     <td>{{ $client->phone }}</td>
                                     <td>{{ $client->email }}</td>
                                     <td>{{ $client->location }}</td>
+                                    <td>
+                                        @if($client->themes->count() > 0)
+                                            @foreach($client->themes AS $theme)
+                                                <span class="badge badge-info">{{ $theme->title }}</span>
+                                            @endforeach
+                                        @else
+                                            Пусто
+                                        @endif
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>

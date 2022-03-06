@@ -3,16 +3,14 @@
 
 namespace App\Http\Controllers\Admin\Client;
 
-use App\Http\Controllers\Controller;
 use App\Http\Requests\Client\StoreRequest;
-use App\Models\Client;
 
-class StoreController extends Controller
+class StoreController extends BaseController
 {
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
-        Client::firstOrCreate(['phone' => $data['phone']], $data);
+        $this->service->store($data);
         return redirect(route('admin.client.index'));
     }
 }
