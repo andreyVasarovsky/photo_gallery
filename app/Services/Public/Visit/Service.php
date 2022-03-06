@@ -30,7 +30,6 @@ class Service
         $visit->update($data);
         if (intval($visit->status) === $visit::STATUS_COMPLETED){
             Client::firstOrCreate([
-                'full_name' => $visit->full_name,
                 'phone' => $visit->phone,
             ], [
                 'full_name' => $visit->full_name,
