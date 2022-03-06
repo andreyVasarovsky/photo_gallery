@@ -32,7 +32,12 @@ class Service
             Client::firstOrCreate([
                 'full_name' => $visit->full_name,
                 'phone' => $visit->phone,
-            ], $data);
+            ], [
+                'full_name' => $visit->full_name,
+                'phone' => $visit->phone,
+                'location' => $visit->location,
+                'email' => $visit->email,
+            ]);
         }
     }
 }
