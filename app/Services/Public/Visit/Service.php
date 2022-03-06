@@ -2,7 +2,9 @@
 
 namespace App\Services\Public\Visit;
 
+use App\Mail\Visit\ConfirmationMail;
 use App\Models\Visit;
+use Illuminate\Support\Facades\Mail;
 
 class Service
 {
@@ -16,5 +18,7 @@ class Service
             'phone' => $dataToStore['phone'],
             'status' => Visit::STATUS_IN_PROGRESS,
         ], $dataToStore);
+
+        Mail::to($dataToStore['email'])->send(new ConfirmationMail($dataToStore));
     }
 }
