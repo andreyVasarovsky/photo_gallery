@@ -38,6 +38,13 @@
                                             <a href="{{ route('admin.photo.edit', $photo->id) }}" class="action">
                                                 <i class="fas fa-edit"></i>
                                             </a>
+                                            <form action="{{ route('admin.photo.destroy', $photo->id) }}" method="POST" class="action d-inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="border-0 bg-transparent p-0">
+                                                    <i class="fas fa-trash-alt text-danger" role="button"></i>
+                                                </button>
+                                            </form>
                                         </div>
                                         <div class="open">
                                             <a href="{{ $photo->url }}" target="_blank">В новой вкладке</a>
