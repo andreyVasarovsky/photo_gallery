@@ -19,6 +19,7 @@ class Service
             'status' => Visit::STATUS_IN_PROGRESS,
         ], $dataToStore);
 
+
         Mail::to($dataToStore['email'])->send(new ConfirmationMail($dataToStore));
     }
 }

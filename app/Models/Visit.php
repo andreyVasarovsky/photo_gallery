@@ -36,4 +36,6 @@ class Visit extends Model
     {
         return self::STATUSES;
     }
+
+
 }
