@@ -17,8 +17,7 @@ trait SendsPasswordResetEmails
      */
     public function showLinkRequestForm()
     {
-        $themes = Theme::all();
-        return view('auth.passwords.email', compact('themes'));
+        return view('auth.passwords.email');
     }
 
     /**

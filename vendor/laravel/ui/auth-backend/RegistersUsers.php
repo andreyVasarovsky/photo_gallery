@@ -19,8 +19,7 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        $themes = Theme::all();
-        return view('auth.register', compact('themes'));
+        return view('auth.register');
     }
 
     /**

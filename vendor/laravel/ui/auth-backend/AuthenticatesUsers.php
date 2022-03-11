@@ -19,8 +19,7 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
-        $themes = Theme::all();
-        return view('auth.login', compact('themes'));
+        return view('auth.login');
     }
 
     /**

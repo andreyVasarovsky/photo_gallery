@@ -44,24 +44,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('public.visit.create') }}">Оставить заявку</a>
                     </li>
-                    @if($themes->count() > 0)
-                        <li class="nav-item dropdown">
-                            <a id="theme" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Темы
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="theme">
-                                <a class="dropdown-item" href="{{ route('public.theme.index') }}">
-                                    <strong>Посмотреть все</strong>
-                                </a>
-                                @foreach($themes AS $theme)
-                                    <a class="dropdown-item" href="{{ route('public.theme.show', $theme->id) }}">
-                                        {{ $theme->title }}
-                                    </a>
-                                @endforeach
-                            </div>
-                        </li>
-                    @endif
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('public.theme.index') }}">Темы</a>
+                    </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
